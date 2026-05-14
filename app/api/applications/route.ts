@@ -27,7 +27,7 @@ export async function POST(request: Request) {
         application[key] = value;
       }  
     }
-
+try {
     const db = adminDb();
     const docRef = db.collection("applications").doc();
     const bucket = adminStorage().bucket();
