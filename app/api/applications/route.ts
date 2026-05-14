@@ -50,13 +50,15 @@ export async function POST(request: Request) {
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
     });
-
-     catch (error) {
+  try {
+    
+  } catch (error) {
+    
+  }
   const message =
     error instanceof Error
       ? error.message
       : "Application submission failed";
-
   return NextResponse.json(
     { error: message },
     { status: 500 }
