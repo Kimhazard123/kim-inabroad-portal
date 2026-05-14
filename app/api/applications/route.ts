@@ -51,10 +51,14 @@ export async function POST(request: Request) {
       updatedAt: new Date().toISOString()
     });
 
-    await Promise.allSettled([sendApplicationEmails(application, documentLinks), sendWhatsAppApplicationAlert(application)]);
-    return NextResponse.json({ id: docRef.id });
-  } catch (error) {
-    const message = error instanceof Error ? error.message : "Application submission failed";
-    return NextResponse.json({ error: message }, { status: 500 });
-  }
+    } catch (error) {
+  const message =
+    error instanceof Error
+      ? error.message
+      : "Application submission failed";
+
+  return NextResponse.json(
+    { error: message },
+    { status: 500 }
+  );
 }
