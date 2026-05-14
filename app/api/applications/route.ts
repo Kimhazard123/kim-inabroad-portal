@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     const application: Record<string, string> = {};
     const files: File[] = [];
 
-    for (const [key, value] of formData.entries()) {
+    for (const [key, value] of Array.from(formData.entries()))
       if (value instanceof File && value.size > 0) {
         if (!allowedTypes.has(value.type) || value.size > maxBytes) {
           return NextResponse.json({ error: `Invalid file: ${value.name}` }, { status: 400 });
