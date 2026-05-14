@@ -25,7 +25,7 @@ export async function POST(request: Request) {
         files.push(value);
       } else if (typeof value === "string") {
         application[key] = value;
-      }
+      }  
     }
 
     const db = adminDb();
