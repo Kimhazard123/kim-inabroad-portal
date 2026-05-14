@@ -51,7 +51,7 @@ export async function POST(request: Request) {
       updatedAt: new Date().toISOString()
     });
 
-    } catch (error) {
+     catch (error) {
   const message =
     error instanceof Error
       ? error.message
