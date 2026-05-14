@@ -1,0 +1,12 @@
+{
+  "name": "InAbroad Edupartner Portal",
+  "short_name": "InAbroad",
+  "description": "Study abroad consultancy portal",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7fcfd",
+  "theme_color": "#057C8E",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

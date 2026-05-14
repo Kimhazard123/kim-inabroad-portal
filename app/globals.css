@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 192 55% 98%;
+  --foreground: 206 46% 15%;
+  --border: 190 22% 84%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: hsl(var(--foreground));
+  background:
+    radial-gradient(circle at top left, rgba(5, 124, 142, 0.14), transparent 30rem),
+    linear-gradient(180deg, #f7fcfd 0%, #eef7f8 54%, #ffffff 100%);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 18px 60px rgba(11, 79, 108, 0.12);
+  backdrop-filter: blur(18px);
+}
+
+.container-page {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+}
