@@ -1,13 +1,18 @@
-import { ApplicationForm } from "@/components/application-form";
+<div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 mt-8">
+  <h2 className="text-2xl font-bold text-[#0B5D7A] mb-3">
+    Upload Required Documents
+  </h2>
 
-export default function ApplyPage() {
-  return (
-    <main className="container-page py-10">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-secondary">Smart Student Application</h1>
-        <p className="mt-3 max-w-3xl leading-7 text-slate-600">Complete your profile, choose course preferences from the integrated finder, and upload the documents required for your education system.</p>
-      </div>
-      <ApplicationForm />
-    </main>
-  );
-}
+  <p className="text-gray-600 mb-6">
+    Please upload all required academic and personal documents using the secure document upload form below.
+  </p>
+
+  <a
+    href="https://forms.gle/5vDiUdtjeNtnTbsE8"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 bg-[#0B5D7A] hover:bg-[#094B62] text-white px-6 py-3 rounded-xl font-semibold transition"
+  >
+    Upload Documents
+  </a>
+</div>
