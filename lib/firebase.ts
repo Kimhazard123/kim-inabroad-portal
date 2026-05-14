@@ -1,18 +1,24 @@
-import { getApps, initializeApp } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
+  apiKey: "AIzaSyD67YC2-9S6o7vchSMdZu9R3fSEYVHy5hY",
+  authDomain: "kim-inabroad-portal.firebaseapp.com",
+  projectId: "kim-inabroad-portal",
+  storageBucket: "kim-inabroad-portal.firebasestorage.app",
+  messagingSenderId: "632952970387",
+  appId: "1:632952970387:web:15e044132d922b66278166",
+  measurementId: "G-MLL8H1RD3M",
 };
 
-export const firebaseApp = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
-export const auth = getAuth(firebaseApp);
-export const db = getFirestore(firebaseApp);
-export const storage = getStorage(firebaseApp);
+const app = !getApps().length
+  ? initializeApp(firebaseConfig)
+  : getApp();
+
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
+
+export default app;
